@@ -7,6 +7,8 @@ html {
 
 body {
   background-color: #6c6760;
+  margin: 1px;
+  padding: 5px;
 }
 
 h1 {
@@ -14,4 +16,10 @@ h1 {
   font-size: 400%;
   text-align: center;
   border: 2px solid #f3b358;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
 }
