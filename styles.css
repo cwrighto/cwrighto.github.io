@@ -1,3 +1,7 @@
+.colorDisplay {
+  font-size: 100%;
+}
+
 html {
   height: 100vh;
   width: 100%;
@@ -23,4 +27,16 @@ a:hover {
   color: red;
   background-color: transparent;
   text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: blue;
+}
+
+li a {
+  float: left;
 }

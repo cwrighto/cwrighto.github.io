@@ -33,6 +33,18 @@
     background-color: transparent;
     text-decoration: underline;
   }
+
+   ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: blue;
+}
+
+li a {
+ 
+}
 </style-->
 <script>
   window.canvas = null;
@@ -80,28 +92,131 @@
 </script>
 
 <body>
-  <h1>Charlie Wright</h1>
-  <p>Welcome to my website.</p>
+
+  <div style="width: 1px; position: fixed; background-image: linear-gradient(to bottom, #f5be70 15%, #a7660c 100%);
+height: 400%;">
+  </div>
+
+  <div>
+    <h1>Charlie Wright</h1>
+    <p>Welcome to my website.</p>
 
 
-  <hr style="color: #f3b358;">
+    <hr style="color: #f3b358;">
 
-  <h1> <b>Example</b></h1>
+    <h1> <b>Example</b></h1>
 
-  <p>Paragraph 1</p>
-  <a href="https://cornell.digication.com/charlie-wrights-portfolio" title="View Portfolio" target="_blank">
-    View my portfolio from MAE2250</a>
+    <p>Paragraph 1</p>
+    <a href="https://cornell.digication.com/charlie-wrights-portfolio" title="View Portfolio" target="_blank">
+      View my portfolio from MAE2250</a>
 
-  <br>
-  <p>updated</p>
-  <hr>
-  <h1>Header 1</h1>
-  <h2>Header 2</h2>
-  <h3>Header 3</h3>
-  <h4>Header 4</h4>
+    <br>
+    <p>updated</p>
+    <hr>
+    <h1 class="colorDisplay">Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header 1
+      Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 Header
+      1
+      Header 1 Header 1 Header 1 Header 1 Header 1 Header 1 </h1>
+    <h2 class="colorDisplay">Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2
+      Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header
+      2
+      Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 Header
+      2
+      Header 2 Header 2 Header 2 Header 2 Header 2 Header 2 </h2>
+    <h3 class="colorDisplay">Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3
+      Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header
+      3
+      Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header 3 Header
+      3
+      Header 3 Header 3 Header 3 Header 3 </h3>
+    <h4 class="colorDisplay">Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4
+      Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header
+      4
+      Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header 4 Header
+      4
+      Header 4 Header 4 Header 4 Header 4 </h4>
+
+    <p class="colorDisplay"> Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+      Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words Words
+    </p>
+  </div>
+
+
+  <script>
+    window.canvas = null;
+    window.canvasContext = null;
+    window.rgb = [];
+
+    function debounce(func, timeout) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+      };
+    }
+
+    function setColor(offsetY) {
+      var p = null;
+      if (window.canvas == null) {
+        //... nothing
+      } else {
+        if (window.canvasContext == null) {
+          window.canvasContext = window.canvas.getContext('2d');
+        }
+        if (window.rgb[offsetY] !== undefined) {
+          p = window.rgb[offsetY];
+        } else {
+          p = window.canvasContext.getImageData(0, offsetY, 1, 1).data;
+          window.rgb[offsetY] = p;
+        }
+
+
+        var i = document.getElementsByClassName("colorDisplay");
+        for (var ob = 0; ob < i.length; ob++) {
+
+          document.getElementsByClassName("colorDisplay")[ob].style.color = "rgb(" + p[0] + ", " + p[1] + ", " + p[2] + ")";
+
+        }
+
+      }
+    }
+
+    function loadCanvas() {
+      html2canvas(document.body, { scale: '1', scrollY: 0 }).then((canvas) => {
+        window.canvas = canvas;
+        setColor(window.pageYOffset);
+      });
+    }
+
+    (function () {
+      loadCanvas();
+      window.onscroll = debounce(() => setColor(window.pageYOffset), 10);
+    })();
+
+  </script>
+
 </body>
 
 </html>
+
+
+
+
+
 
 
 
@@ -114,6 +229,11 @@
 </head>
 
 <style>
+  .colorDisplay 
+  {
+  font-size: 28;
+  }
+  
   html {
     height: 100vh; not needed
     width: 100%;  not needed
@@ -133,7 +253,7 @@
 
 
 <div style="width: 100%; position: fixed; background-color: #000;height: 69px;">
-    <h1 id="colorDisplay"; width: 500px; float:left;">Color box (on the right)</h1>
+    <h1 class = "colorDisplay" style=" width: 500px; float:left;">Color box (on the right)</h1>
     
     <span style="width: 30px; height: 30px; float:right" >hjbhbdj</span>
 </div>
@@ -182,7 +302,7 @@ function setColor(offsetY)
             p = window.canvasContext.getImageData(0, offsetY, 1, 1).data;
             window.rgb[offsetY] = p;
         }
-        document.getElementById("colorDisplay").style.color = "rgb(" + p[0]+", "+p[1]+", "+p[2] + ")";
+        document.getElementsByClassName("colorDisplay")[0].style.color = "rgb(" + p[0]+", "+p[1]+", "+p[2] + ")";
     }
 }
 
@@ -202,5 +322,8 @@ function loadCanvas()
 </script>
 </body>
 </html>
+
+
+
 
 -->
