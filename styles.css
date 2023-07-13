@@ -23,20 +23,27 @@ h1 {
 
 }
 
+p {
+  margin-left: 5px;
+}
+
 a:hover {
   color: red;
   background-color: transparent;
   text-decoration: underline;
 }
 
-ul {
+/*ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: blue;
+}*/
+ul {
+  font-size: 14px;
+  list-style: outside;
 }
-
 
 li a {
   float: left;
