@@ -2,6 +2,30 @@
   font-size: 100%;
 }
 
+.btn-hover:hover {
+  border: 2px solid #ff96ad;
+  color: #ff96ad;
+  background-color: #17181c;
+}
+
+button {
+  position: relative;
+  border: none;
+  transition: .4s ease-in;
+  z-index: 1
+}
+
+button::before,
+button::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+}
+
+
+
+
+
 html {
   height: 100vh;
   width: 100%;
@@ -40,6 +64,7 @@ a:hover {
   overflow: hidden;
   background-color: blue;
 }*/
+
 ul {
   font-size: 14px;
   list-style: outside;

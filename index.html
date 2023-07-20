@@ -4,54 +4,9 @@
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <!--script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
 </head>
 
-
-<!--script>
-  window.canvas = null;
-  window.canvasContext = null;
-  window.rgb = [];
-
-  function debounce(func, timeout) {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => { func.apply(this, args); }, timeout);
-    };
-  }
-
-  function setColor(offsetY) {
-    var p = null;
-    if (window.canvas == null) {
-      //... nothing
-    } else {
-      if (window.canvasContext == null) {
-        window.canvasContext = window.canvas.getContext('2d');
-      }
-      if (window.rgb[offsetY] !== undefined) {
-        p = window.rgb[offsetY];
-      } else {
-        p = window.canvasContext.getImageData(1, 70 + offsetY, 1, 1).data;
-        window.rgb[offsetY] = p;
-      }
-      document.getElementById("colorDisplay").style.backgroundColor = "rgb(" + p[0] + ", " + p[1] + ", " + p[2] + ")";
-    }
-  }
-
-  function loadCanvas() {
-    html2canvas(document.body, { scale: '1', scrollY: 0 }).then((canvas) => {
-      window.canvas = canvas;
-      setColor(window.pageYOffset);
-    });
-  }
-
-  (function () {
-    loadCanvas();
-    window.onscroll = debounce(() => setColor(window.pageYOffset), 10);
-  })();
-
-</script-->
 
 <body>
 
