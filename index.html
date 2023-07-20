@@ -51,7 +51,7 @@
     float: left;
   }
 </style>
-<script>
+<!--script>
   window.canvas = null;
   window.canvasContext = null;
   window.rgb = [];
@@ -94,7 +94,7 @@
     window.onscroll = debounce(() => setColor(window.pageYOffset), 10);
   })();
 
-</script>
+</script-->
 
 <body>
 
@@ -199,6 +199,60 @@ height: 400%;">
   </div>
 
 
+  <!--script>
+    window.canvas = null;
+    window.canvasContext = null;
+    window.rgb = [];
+
+    function debounce(func, timeout) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+      };
+    }
+
+    function setColor(offsetY) {
+      var p = null;
+      if (window.canvas == null) {
+        //... nothing
+      } else {
+        if (window.canvasContext == null) {
+          window.canvasContext = window.canvas.getContext('2d');
+        }
+        if (window.rgb[offsetY] !== undefined) {
+          p = window.rgb[offsetY];
+        } else {
+          p = window.canvasContext.getImageData(0, offsetY, 1, 1).data;
+          window.rgb[offsetY] = p;
+        }
+
+
+        var i = document.getElementsByClassName("colorDisplay");
+        for (var ob = 0; ob < i.length; ob++) {
+
+          document.getElementsByClassName("colorDisplay")[ob].style.color = "rgb(" + p[0] + ", " + p[1] + ", " + p[2] + ")";
+
+        }
+
+      }
+    }
+
+    function loadCanvas() {
+      html2canvas(document.body, { scale: '1', scrollY: 0 }).then((canvas) => {
+        window.canvas = canvas;
+        setColor(window.pageYOffset);
+      });
+    }
+
+    (function () {
+      loadCanvas();
+      window.onscroll = debounce(() => setColor(window.pageYOffset), 10);
+    })();
+
+  </script-->
+
+
   <script>
     window.canvas = null;
     window.canvasContext = null;
@@ -251,7 +305,6 @@ height: 400%;">
     })();
 
   </script>
-
 </body>
 
 </html>
