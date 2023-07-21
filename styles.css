@@ -24,6 +24,12 @@ button::after {
 
 
 
+.mainPage {
+  background-color: #6c6760;
+  margin: 0px;
+  padding: 1px;
+}
+
 
 
 html {
@@ -34,9 +40,10 @@ html {
 }
 
 body {
-  background-color: #6c6760;
+  background-image: linear-gradient(to bottom, #f5be70 15%, #a7660c 100%);
+
   margin: 0px;
-  padding: 0px;
+  padding: 1px;
 }
 
 h1 {
