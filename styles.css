@@ -27,7 +27,7 @@ button::after {
 .mainPage {
   background-color: #6c6760;
   margin: 0px;
-  padding: 10px;
+  padding: 1px;
 }
 
 
@@ -52,6 +52,11 @@ h1 {
   text-align: center;
   border: 2px solid #f3b358;
 
+}
+
+h2 {
+  font-size: 30px;
+  text-decoration-color: #f3b358;
 }
 
 p {
