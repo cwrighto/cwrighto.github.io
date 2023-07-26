@@ -1,5 +1,5 @@
 .colorDisplay {
-  font-size: 100%;
+  text-underline-offset: 0;
 }
 
 .btn-hover:hover {
@@ -69,13 +69,13 @@ a:hover {
   text-decoration: underline;
 }
 
-/*ul {
+nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: blue;
-}*/
+}
 
 ul {
   font-size: 14px;
