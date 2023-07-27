@@ -8,6 +8,29 @@
   background-color: #17181c;
 }
 
+.btn-hover {
+  border: 2px solid #ff96ad
+}
+
+.buttonList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.buttonList li button a {
+  display: block
+}
+
+nav {
+  margin: 0;
+  padding: 1px;
+  overflow: hidden;
+  background-color: blue;
+}
+
 button {
   position: relative;
   border: none;
@@ -69,16 +92,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.buttonList {
-  list-style-type: none;
-}
-
-nav {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: blue;
-}
 
 ul {
   font-size: 14px;
