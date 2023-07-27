@@ -69,8 +69,11 @@ a:hover {
   text-decoration: underline;
 }
 
-nav {
+.buttonList {
   list-style-type: none;
+}
+
+nav {
   margin: 0;
   padding: 0;
   overflow: hidden;
