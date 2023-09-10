@@ -30,6 +30,22 @@
   float: left
 }
 
+
+#flex-parent {
+  display: flex;
+}
+
+#flex-child1 {
+  flex: 1;
+}
+
+#flex-child2 {
+  flex: 1;
+}
+
+
+
+
 nav {
   margin: 0;
   padding: 1px;
